@@ -3,6 +3,7 @@ import HomeSection from "./components/HomeSection";
 import Navbar from "./components/Navbar";
 import { ThemeProvider, useTheme } from "./components/ThemeContext";
 import AboutSection from "./components/AboutSection";
+import ExperienceSection from "./components/ExperienceSection";
 
 function AppContent() {
     const { theme } = useTheme();
@@ -18,6 +19,7 @@ function AppContent() {
             <div className="main-content">
                 <HomeSection />
                 <AboutSection />
+                <ExperienceSection />
                 <div style={{ height: "100vh" }}></div>
             </div>
         </div>
