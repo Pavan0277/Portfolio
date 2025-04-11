@@ -161,7 +161,7 @@ const AboutSection = () => {
                                 }}
                             />
                             <motion.img
-                                src="src/assets/image.png"
+                                src="/assets/image.png"
                                 alt="Pavan Rasal"
                                 className="w-full h-auto object-cover filter drop-shadow-lg dark:drop-shadow-[0_0_20px_rgba(0,0,0,0.7)]"
                                 whileHover={{ scale: 1.03 }}
