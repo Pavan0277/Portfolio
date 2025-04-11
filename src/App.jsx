@@ -4,6 +4,7 @@ import Navbar from "./components/Navbar";
 import { ThemeProvider, useTheme } from "./components/ThemeContext";
 import AboutSection from "./components/AboutSection";
 import ExperienceSection from "./components/ExperienceSection";
+import SkillsSection from "./components/SkillsSection";
 
 function AppContent() {
     const { theme } = useTheme();
@@ -19,6 +20,7 @@ function AppContent() {
             <div className="main-content">
                 <HomeSection />
                 <AboutSection />
+                <SkillsSection />
                 <ExperienceSection />
                 <div style={{ height: "100vh" }}></div>
             </div>
