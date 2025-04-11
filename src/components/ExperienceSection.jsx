@@ -11,43 +11,41 @@ const ExperienceSection = () => {
         {
             company: "Coding Jr",
             role: "Web Development Intern",
-            period: "December 2024",
-            link: "#",
+            period: "March 2025",
+            link: "https://drive.google.com/file/d/1gMedbbVIwkLAL_2Tq3po3_hWVjE1Vtjk/view?usp=drive_link",
             responsibilities: [
                 "Engineered scalable backend APIs using Go (Golang), improving system performance and supporting 10,000+ concurrent users on a real-time student-mentor platform.",
                 "Optimized complex MySQL queries, reducing API response times by 40% and enhancing database performance under high load.",
-                "Contributed to frontend components to streamline user experience, working with the team to boost overall platform usability.",
                 "Built automated and interactive API documentation using Swagger UI, improving developer onboarding speed by 30%.",
             ],
-            logo: "/images/codingjr-logo.png", // Replace with actual logo path
+            logo: "src/assets/coding.jpg",
             color: "blue",
         },
         {
             company: "The Skill Guru Foundation",
             role: "Backend Development Intern",
-            period: "February 2025",
-            link: "#",
+            period: "December 2024",
+            link: "https://drive.google.com/file/d/1UgLDWu3MVY4YbFl5Liq7ZauzOhmacpBl/view?usp=sharing",
             responsibilities: [
                 "Contributed to the development of a web platform enabling real-time communication between students and mentors.",
-                "Designed an inquiry interface handling 120 daily student questions, boosting mentor-mentee interaction through shared visibility of peer answers.",
                 "Integrated voice and video calling, boosting direct communication efficiency by 40%.",
                 "Developed intuitive UI/UX for the web platform, increasing user satisfaction (measured by surveys) by 20% and resulting in the tool now being used by over 200 mentors.",
             ],
-            logo: "/images/skillguru-logo.png", // Replace with actual logo path
+            logo: "/src/assets/theskill.jpg", // Replace with actual logo path
             color: "purple",
         },
         {
             company: "Rentkar - Switch To Share",
             role: "Full Stack Developer",
-            period: "September 2024 - Present",
-            link: "#",
+            period: "September 2024",
+            link: "https://drive.google.com/file/d/1TX_m7Zbju9suZxYN6g0fuFK6dLftu1AH/view?usp=sharing",
             responsibilities: [
                 "Maintaining a web app for renting products like PS5s and laptops.",
                 "Streamlined the rental process for a better user experience.",
                 "Worked with cross-functional teams to improve functionality and design.",
                 "Engaged in code reviews to uphold code quality.",
             ],
-            logo: "/images/rentkar-logo.png", // Replace with actual logo path
+            logo: "src/assets/rentkar.jpg", // Replace with actual logo path
             color: "green",
         },
     ];
@@ -161,14 +159,14 @@ const ExperienceSection = () => {
                         >
                             <div className="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] w-12 h-12 rounded-full bg-white dark:bg-gray-800 border-4 border-blue-500 dark:border-blue-400 z-10 flex items-center justify-center ml-0 md:ml-0">
                                 <motion.div
-                                    className={`w-8 h-8 rounded-full flex items-center justify-center`}
+                                    className={`w-10 h-10 rounded-full flex items-center justify-center`}
                                     whileHover={{ scale: 1.2, rotate: 5 }}
                                     whileTap={{ scale: 0.9 }}
                                 >
                                     <img
                                         src={exp.logo}
                                         alt={`${exp.company} logo`}
-                                        className="w-full h-full object-contain"
+                                        className="w-full h-full object-contain rounded-full"
                                     />
                                 </motion.div>
                             </div>

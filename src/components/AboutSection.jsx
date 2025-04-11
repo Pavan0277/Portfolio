@@ -78,7 +78,7 @@ const AboutSection = () => {
     return (
         <div className="relative flex justify-right items-center " id="about">
             <motion.section
-                className="flex flex-col w-full min-h-screen md:flex-row items-center justify-evenly py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 ml-4 md:ml-6 lg:ml-20 gap-6 md:gap-10 relative overflow-hidden text-gray-900 dark:text-white"
+                className="flex flex-col w-full min-h-screen md:flex-row items-center justify-evenly py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 lg:px-12 xl:px-16 ml-4 md:ml-6 lg:ml-40 gap-6 md:gap-10 relative overflow-hidden text-gray-900 dark:text-white"
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, amount: 0.3 }}
@@ -161,7 +161,7 @@ const AboutSection = () => {
                                 }}
                             />
                             <motion.img
-                                src="/assets/image.png"
+                                src="src/assets/image.png"
                                 alt="Pavan Rasal"
                                 className="w-full h-auto object-cover filter drop-shadow-lg dark:drop-shadow-[0_0_20px_rgba(0,0,0,0.7)]"
                                 whileHover={{ scale: 1.03 }}
@@ -184,8 +184,9 @@ const AboutSection = () => {
                             className="text-base sm:text-lg mb-6 text-gray-700 dark:text-[#87A4B6] font-medium leading-relaxed"
                             variants={itemVariants}
                         >
-                            An ambitious Front-end Developer and designer who takes
-                            great pride in the presentation and quality of work.
+                            An ambitious Front-end Developer and designer who
+                            takes great pride in the presentation and quality of
+                            work.
                         </motion.p>
 
                         <motion.p
@@ -193,10 +194,83 @@ const AboutSection = () => {
                             variants={itemVariants}
                         >
                             Pavan is someone who can design and create simple,
-                            beautiful and easy to understand things. He is an expert
-                            at taking designs into original, exciting and new
-                            directions.
+                            beautiful and easy to understand things. He is an
+                            expert at taking designs into original, exciting and
+                            new directions.
                         </motion.p>
+
+                        {/* Education Section */}
+                        <motion.div className="mt-8" variants={itemVariants}>
+                            <motion.h3
+                                className="text-xl sm:text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400"
+                                variants={itemVariants}
+                            >
+                                Education
+                            </motion.h3>
+
+                            <motion.div className="space-y-4">
+                                <motion.div
+                                    className="border-l-2 border-blue-500 dark:border-blue-400 pl-4 py-1"
+                                    variants={itemVariants}
+                                    whileHover={{ x: 5 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 300,
+                                    }}
+                                >
+                                    <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
+                                        Bachelor of Engineering in Computer
+                                        Science
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                                        Pune University
+                                    </p>
+                                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
+                                        2018 - 2022
+                                    </p>
+                                </motion.div>
+
+                                <motion.div
+                                    className="border-l-2 border-blue-500 dark:border-blue-400 pl-4 py-1"
+                                    variants={itemVariants}
+                                    whileHover={{ x: 5 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 300,
+                                    }}
+                                >
+                                    <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
+                                        Higher Secondary Education
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                                        Fergusson College
+                                    </p>
+                                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
+                                        2016 - 2018
+                                    </p>
+                                </motion.div>
+
+                                <motion.div
+                                    className="border-l-2 border-blue-500 dark:border-blue-400 pl-4 py-1"
+                                    variants={itemVariants}
+                                    whileHover={{ x: 5 }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 300,
+                                    }}
+                                >
+                                    <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
+                                        Secondary School Certificate
+                                    </h4>
+                                    <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
+                                        St. Xavier's High School
+                                    </p>
+                                    <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
+                                        2015 - 2016
+                                    </p>
+                                </motion.div>
+                            </motion.div>
+                        </motion.div>
                     </motion.div>
                 </motion.div>
             </motion.section>
