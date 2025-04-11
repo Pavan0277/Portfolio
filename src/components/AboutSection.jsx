@@ -184,19 +184,14 @@ const AboutSection = () => {
                             className="text-base sm:text-lg mb-6 text-gray-700 dark:text-[#87A4B6] font-medium leading-relaxed"
                             variants={itemVariants}
                         >
-                            An ambitious Front-end Developer and designer who
-                            takes great pride in the presentation and quality of
-                            work.
+                            I'm a passionate developer who loves building scalable and user-friendly applications. From AI tools to finance trackers, I enjoy turning ideas into real-world solutions using tech like Node.js, Docker, and ECS.
                         </motion.p>
 
                         <motion.p
                             className="text-base sm:text-lg text-gray-700 dark:text-[#87A4B6] font-medium leading-relaxed"
                             variants={itemVariants}
                         >
-                            Pavan is someone who can design and create simple,
-                            beautiful and easy to understand things. He is an
-                            expert at taking designs into original, exciting and
-                            new directions.
+                            I'm always eager to learn, grow, and collaborate on projects that make an impact. Exploring new tech and solving meaningful problems is what drives me every day.
                         </motion.p>
 
                         {/* Education Section */}
@@ -219,14 +214,13 @@ const AboutSection = () => {
                                     }}
                                 >
                                     <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
-                                        Bachelor of Engineering in Computer
-                                        Science
+                                        Bachelor of Engineering in Information Technology
                                     </h4>
                                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                                        Pune University
+                                        Vcet vasai
                                     </p>
                                     <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
-                                        2018 - 2022
+                                        Present - 2022
                                     </p>
                                 </motion.div>
 
@@ -243,10 +237,10 @@ const AboutSection = () => {
                                         Higher Secondary Education
                                     </h4>
                                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                                        Fergusson College
+                                        Vatak College
                                     </p>
                                     <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
-                                        2016 - 2018
+                                        2020 - 2022
                                     </p>
                                 </motion.div>
 
@@ -263,10 +257,10 @@ const AboutSection = () => {
                                         Secondary School Certificate
                                     </h4>
                                     <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                                        St. Xavier's High School
+                                        A.V.S vidyaMandir
                                     </p>
                                     <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
-                                        2015 - 2016
+                                        2015 - 2019
                                     </p>
                                 </motion.div>
                             </motion.div>
