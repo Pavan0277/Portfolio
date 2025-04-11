@@ -22,11 +22,11 @@ body {
 }
 
 .grid-pattern-dark {
-    background: url("/src/assets/pattern-dark.svg");
+    background: url("/pattern-dark.svg");
 }
 
 .grid-pattern-light {
-    background: url("/src/assets/pattern-light.svg");
+    background: url("/pattern-light.svg");
 }
 
 /* Responsive background adjustments */

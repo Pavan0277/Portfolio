@@ -18,7 +18,7 @@ const ExperienceSection = () => {
                 "Optimized complex MySQL queries, reducing API response times by 40% and enhancing database performance under high load.",
                 "Built automated and interactive API documentation using Swagger UI, improving developer onboarding speed by 30%.",
             ],
-            logo: "src/assets/coding.jpg",
+            logo: "/coding.jpg",
             color: "blue",
         },
         {
@@ -31,7 +31,7 @@ const ExperienceSection = () => {
                 "Integrated voice and video calling, boosting direct communication efficiency by 40%.",
                 "Developed intuitive UI/UX for the web platform, increasing user satisfaction (measured by surveys) by 20% and resulting in the tool now being used by over 200 mentors.",
             ],
-            logo: "/src/assets/theskill.jpg", // Replace with actual logo path
+            logo: "/theskill.jpg", // Replace with actual logo path
             color: "purple",
         },
         {
@@ -45,7 +45,7 @@ const ExperienceSection = () => {
                 "Worked with cross-functional teams to improve functionality and design.",
                 "Engaged in code reviews to uphold code quality.",
             ],
-            logo: "src/assets/rentkar.jpg", // Replace with actual logo path
+            logo: "/rentkar.jpg", // Replace with actual logo path
             color: "green",
         },
     ];
