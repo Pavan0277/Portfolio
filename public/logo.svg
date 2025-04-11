@@ -1,0 +1,23 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" width="2000" height="1500" viewBox="0 0 2000 1500">
+  <!-- Define a circular clip path -->
+  <defs>
+    <clipPath id="circleClip">
+      <circle cx="1000" cy="750" r="750" /> <!-- Centered circle with radius to create rounded effect -->
+    </clipPath>
+  </defs>
+
+  <!-- Apply the circular clip path to the main SVG content -->
+  <g clip-path="url(#circleClip)">
+    <path fill="#fff" stroke="transparent" d="M0 0h2000v1500H0z"/>
+    <g data-padding="20">
+      <g transform="translate(-1486.05 -1113.21) scale(2.42115)">
+        <rect width="587.814" height="471.21" x="492.201" y="338.083" fill="none" rx="0" ry="0" transform="matrix(.95 0 0 .95 280 224.55)"/>
+        <path fill="#111" d="M933.823 777.564h-54.73q-6.74 0-10.51-5.35-3.76-5.35-3.76-14.48 0-20.22 16.65-20.22h42.04q14.68 0 20.82-8.33 6.15-8.33 6.15-18.24v-65.05q0-9.91-6.15-18.24-6.14-8.33-20.82-8.33h-83.28v258.98q0 19.03-23.8 19.03-23 0-23-19.03v-275.24q0-14.28 7.14-19.03 7.14-4.76 17.45-4.76h115.8q9.92 0 21.02 4.36 11.11 4.36 21.42 11.1h-.4q10.31 7.54 15.87 19.63 5.55 12.1 5.55 27.96v71.79q0 32.12-21.42 47.99-10.31 7.53-21.02 11.5-10.7 3.96-21.02 3.96m310.92 111.84-74.95-125.72h-30.54q-6.74 0-10.51-5.35-3.77-5.36-3.77-14.48 0-20.22 16.66-20.22h46.4q14.67 0 20.62-8.33t5.95-18.25v-51.16q0-9.91-5.95-18.24t-20.62-8.33h-83.68v258.58q0 19.04-23.4 19.04t-23.4-19.04v-274.84q0-14.28 7.34-19.03 7.34-4.76 17.65-4.76h115.41q10.31 0 21.41 4.36 11.11 4.36 21.42 11.1h-.4q10.31 7.54 15.86 19.63 5.56 12.1 5.56 27.96v57.91q0 32.12-21.42 47.99-4.36 3.17-9.32 5.94-4.96 2.78-10.11 5.56l63.45 104.7q1.19 1.98 2.38 5.15 1.19 3.18 1.19 5.16 0 9.52-13.48 18.24v-.39q-9.12 5.55-15.47 5.55-9.12 0-14.67-9.12Z"/>
+      </g>
+      <path fill="transparent" stroke="transparent" stroke-width="2.511" d="M299.386 187.5h1401.228v1125H299.386z"/>
+      
+      <!-- Example of adding larger text -->
+      <text x="1000" y="750" font-size="100" text-anchor="middle" fill="#111" font-family="Arial">Your Text Here</text>
+    </g>
+  </g>
+</svg>
