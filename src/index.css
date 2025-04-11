@@ -5,20 +5,20 @@
 html,
 body {
     height: 100%;
-    overflow: hidden; /* Prevents background from scrolling */
+    overflow: hidden; 
 }
 
 .grid-pattern-dark,
 .grid-pattern-light {
-    position: fixed; /* Fixes background in place */
+    position: fixed; 
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: -1; /* Moves background behind content */
-    background-size: cover; /* Ensures the background covers the entire viewport */
-    background-repeat: no-repeat; /* Prevents tiling of the background */
-    background-position: center; /* Centers the background image */
+    z-index: -1; 
+    background-size: cover; 
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .grid-pattern-dark {
@@ -29,30 +29,28 @@ body {
     background: url("/pattern-light.svg");
 }
 
-/* Responsive background adjustments */
 @media (max-width: 768px) {
     .grid-pattern-dark,
     .grid-pattern-light {
-        background-size: 200% auto; /* Increase scaling on smaller screens */
+        background-size: 200% auto; 
     }
 }
 
 @media (max-width: 480px) {
     .grid-pattern-dark,
     .grid-pattern-light {
-        background-size: 300% auto; /* Further increase scaling on mobile */
+        background-size: 300% auto; 
     }
 }
 
 .main-content {
     position: relative;
-    z-index: 1; /* Ensures content is above background */
+    z-index: 1; 
     height: 100vh;
-    overflow-y: auto; /* Enables vertical scrolling */
-    scroll-padding-top: 80px; /* Adds padding for fixed navbar */
-    -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+    overflow-y: auto; 
+    scroll-padding-top: 80px;
+    -webkit-overflow-scrolling: touch;
 }
-/* Custom Scrollbar Styling */
 .main-content::-webkit-scrollbar {
     width: 10px;
 }
@@ -61,7 +59,6 @@ body {
     background-color: transparent;
 }
 
-/* Light theme scrollbar */
 .light .main-content::-webkit-scrollbar-thumb {
     background-color: rgba(156, 163, 175, 0.5);
     border-radius: 6px;
@@ -71,7 +68,6 @@ body {
     background-color: rgba(156, 163, 175, 0.8);
 }
 
-/* Dark theme scrollbar */
 .dark .main-content::-webkit-scrollbar-thumb {
     background-color: rgba(75, 85, 99, 0.5);
     border-radius: 6px;
@@ -81,7 +77,6 @@ body {
     background-color: rgba(75, 85, 99, 0.8);
 }
 
-/* Firefox scrollbar (uses different syntax) */
 .main-content {
     scrollbar-width: thin;
     scrollbar-color: var(--scrollbar-thumb) transparent;
@@ -93,4 +88,38 @@ body {
 
 .dark {
     --scrollbar-thumb: rgba(75, 85, 99, 0.5);
+}
+
+@keyframes particle {
+    0% {
+        transform: translate(0, 0) scale(0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(var(--tx), var(--ty)) scale(1.5);
+        opacity: 0;
+    }
+}
+
+@keyframes ripple {
+    0% {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(-50%, -50%) scale(7);
+        opacity: 0;
+    }
+}
+
+.animate-particle {
+    animation: particle 1s cubic-bezier(0.155, 0.405, 0.285, 0.925) forwards;
+}
+
+.animate-ripple {
+    animation: ripple 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+}
+
+.animation-delay-200 {
+    animation-delay: 0.2s;
 }
