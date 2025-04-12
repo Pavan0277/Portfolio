@@ -99,7 +99,10 @@ const ExperienceSection = () => {
     };
 
     return (
-        <div id="experience" className="relative flex justify-right items-center">
+        <div
+            id="experience"
+            className="relative flex justify-right items-center"
+        >
             <motion.section
                 className="flex flex-col w-full min-h-screen py-12 sm:py-16 md:py-20 px-4 sm:px-8 md:px-16 lg:px-24 xl:px-36 ml-0 lg:ml-20 gap-6 md:gap-10 relative overflow-hidden text-gray-900 dark:text-white"
                 initial="hidden"
@@ -115,31 +118,32 @@ const ExperienceSection = () => {
                 />
 
                 <motion.div
-                    className="relative z-10 w-full flex flex-col items-center md:items-start mb-10"
+                    className="relative z-10 w-full flex flex-col items-center text-center mb-10"
                     variants={itemVariants}
                 >
                     <motion.h2
-                        className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-blue-600 dark:text-blue-400"
+                        className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-blue-600 dark:text-blue-400 inline-block relative"
                         variants={itemVariants}
                     >
                         Experience
                     </motion.h2>
                     <motion.h1
-                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white"
+                        className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-blue-100"
                         variants={itemVariants}
                     >
                         Work Journey
                     </motion.h1>
                     <motion.div
-                        className="w-20 h-1 bg-blue-500 dark:bg-blue-400 rounded-full mb-6"
+                        className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400 rounded-full mx-auto mb-6"
                         variants={itemVariants}
                     />
                     <motion.p
-                        className="text-base sm:text-lg text-gray-700 dark:text-[#87A4B6] font-medium text-center md:text-left max-w-2xl"
+                        className="text-base sm:text-lg text-gray-700 dark:text-[#87A4B6] font-medium text-center max-w-2xl mx-auto"
                         variants={itemVariants}
                     >
-                        My professional journey through various roles and projects
-                        that have shaped my expertise in web development.
+                        My professional journey through various roles and
+                        projects that have shaped my expertise in web
+                        development.
                     </motion.p>
                 </motion.div>
 
@@ -232,7 +236,8 @@ const ExperienceSection = () => {
                                                                 x: 0,
                                                             }}
                                                             transition={{
-                                                                delay: 0.1 * idx,
+                                                                delay:
+                                                                    0.1 * idx,
                                                             }}
                                                             viewport={{
                                                                 once: true,

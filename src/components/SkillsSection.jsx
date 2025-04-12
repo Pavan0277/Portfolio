@@ -104,13 +104,19 @@ const SkillsSection = () => {
                         variants={itemVariants}
                     >
                         <motion.h2
-                            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-blue-600 dark:text-blue-400"
+                            className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-blue-600 dark:text-blue-400 inline-block relative"
                             variants={itemVariants}
                         >
                             Skills
                         </motion.h2>
+                        <motion.h1
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-blue-100"
+                            variants={itemVariants}
+                        >
+                            Technical Expertise
+                        </motion.h1>
                         <motion.div
-                            className="w-20 h-1 bg-blue-500 dark:bg-blue-400 rounded-full mx-auto mb-6"
+                            className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400 rounded-full mx-auto mb-6"
                             variants={itemVariants}
                         />
                         <motion.p
