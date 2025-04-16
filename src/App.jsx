@@ -25,7 +25,7 @@ function AppContent() {
                 <AboutSection />
                 <SkillsSection />
                 <ExperienceSection />
-                {/* <ProjectsSection /> */}
+                <ProjectsSection />
                 <ContactSection />
             </div>
             

@@ -6,37 +6,36 @@ import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 const ProjectsSection = () => {
     const { theme } = useTheme();
 
-    // Sample project data - replace with your actual projects
     const projects = [
         {
             id: 1,
-            title: "AI Assistant App",
+            title: "PennyTracker",
             description:
-                "A smart AI assistant that helps users with daily tasks, scheduling, and information retrieval using natural language processing.",
-            image: "/project1.jpg", // Add your project images to public folder
-            technologies: ["React", "Node.js", "OpenAI API", "MongoDB"],
-            githubLink: "https://github.com/yourusername/ai-assistant",
-            liveLink: "https://ai-assistant-demo.netlify.app",
+                "An automatic finance tracker that allows users to track their spending by scraping messages, providing insights into their financial habits and helping them manage their budgets effectively.",
+            image: "pennytrackerImage.png", 
+            technologies: ["React.js", "Express", "MongoDB", "Chart.js", "AWS CloudFront", "Redux", "Redis"],
+            githubLink: "https://github.com/Pavan-0228/FinanceTracker",
+            liveLink: "https://www.pennytracker.tech",
         },
         {
             id: 2,
-            title: "Finance Tracker",
+            title: "BrowseAndBuy",
             description:
-                "Personal finance application that helps users track expenses, set budgets, and visualize spending patterns with interactive charts.",
-            image: "/project2.jpg",
-            technologies: ["Vue.js", "Express", "PostgreSQL", "Chart.js"],
-            githubLink: "https://github.com/yourusername/finance-tracker",
-            liveLink: "https://finance-tracker-app.herokuapp.com",
+                "A web application that allows seniors to list their previous year books and materials for juniors to purchase. It also features real-time chatting to facilitate communication between buyers and sellers.",
+            image: "bAndB.png", 
+            technologies: ["React.js", "Node.js", "MongoDB", "Socket.io", "Express"],
+            githubLink: "https://github.com/Pavan-0228/BrowseAndBuy",
+            liveLink: "https://browsenbuy.vercel.app/",
         },
         {
             id: 3,
-            title: "E-commerce Platform",
+            title: "BuildSphere",
             description:
-                "Full-featured e-commerce platform with product catalog, shopping cart, user authentication, and payment processing.",
-            image: "/project3.jpg",
-            technologies: ["Next.js", "Tailwind CSS", "Stripe API", "Firebase"],
-            githubLink: "https://github.com/yourusername/ecommerce-platform",
-            liveLink: "https://ecommerce-example.vercel.app",
+                "A platform that allows users to deploy and host their projects with ease. BuildSphere simplifies the deployment process for web applications and provides a seamless hosting experience.",
+            image: "/buildSphere.png",
+            technologies: ["React.js", "Docker", "CI/CD", "AWS", "Node.js", "clickDb"],
+            githubLink: "https://github.com/Pavan-0228/BuildSphere",
+            liveLink: "https://github.com/Pavan-0228/BuildSphere",
         },
     ];
 
@@ -125,6 +124,21 @@ const ProjectsSection = () => {
         },
     };
 
+    // Create particles outside of render to avoid recreation on each render
+    const particles = React.useMemo(() => {
+        return [...Array(10)].map((_, i) => ({
+            id: i,
+            width: Math.random() * 20 + 5,
+            height: Math.random() * 20 + 5,
+            top: `${Math.random() * 100}%`,
+            left: `${Math.random() * 100}%`,
+            yMove: Math.random() * -100 - 50,
+            xMove: Math.random() * 50 - 25,
+            duration: Math.random() * 10 + 10,
+            delay: Math.random() * 5
+        }));
+    }, []);
+
     return (
         <div className="relative" id="projects">
             <motion.section
@@ -136,7 +150,7 @@ const ProjectsSection = () => {
             >
                 {/* Background pattern with animated particles */}
                 <motion.div
-                    className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"
+                    className="absolute inset-0 opacity-5 dark:opacity-10"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: theme === "dark" ? 0.1 : 0.05 }}
                     transition={{ duration: 0.5, ease: "easeInOut" }}
@@ -145,30 +159,30 @@ const ProjectsSection = () => {
                 {/* Floating particles background effect */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
                     <div className="particle-container">
-                        {[...Array(10)].map((_, i) => (
+                        {particles.map((particle) => (
                             <motion.div
-                                key={i}
+                                key={particle.id}
                                 className={`particle ${
                                     theme === "dark"
                                         ? "bg-blue-400/20"
                                         : "bg-blue-600/10"
                                 } rounded-full absolute`}
                                 style={{
-                                    width: Math.random() * 20 + 5,
-                                    height: Math.random() * 20 + 5,
-                                    top: `${Math.random() * 100}%`,
-                                    left: `${Math.random() * 100}%`,
+                                    width: particle.width,
+                                    height: particle.height,
+                                    top: particle.top,
+                                    left: particle.left,
                                 }}
                                 animate={{
-                                    y: [0, Math.random() * -100 - 50],
-                                    x: [0, Math.random() * 50 - 25],
+                                    y: [0, particle.yMove],
+                                    x: [0, particle.xMove],
                                     opacity: [0, 0.7, 0],
                                 }}
                                 transition={{
-                                    duration: Math.random() * 10 + 10,
+                                    duration: particle.duration,
                                     repeat: Infinity,
                                     ease: "linear",
-                                    delay: Math.random() * 5,
+                                    delay: particle.delay,
                                 }}
                             />
                         ))}
@@ -188,7 +202,7 @@ const ProjectsSection = () => {
                             Projects
                         </motion.h2>
                         <motion.h1
-                            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-blue-100"
+                            className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white"
                             variants={headerVariants}
                         >
                             Recent Work
@@ -198,7 +212,7 @@ const ProjectsSection = () => {
                             variants={headerVariants}
                         />
                         <motion.p
-                            className="max-w-2xl mx-auto text-base sm:text-lg text-gray-700 dark:text-[#87A4B6] font-medium"
+                            className="max-w-2xl mx-auto text-base sm:text-lg text-gray-700 dark:text-gray-300 font-medium"
                             variants={headerVariants}
                         >
                             Here are some of my recent projects showcasing my
@@ -216,7 +230,6 @@ const ProjectsSection = () => {
                                 variants={projectVariants}
                                 whileHover="hover"
                                 custom={index}
-                                transition={{ delay: index * 0.1 }}
                                 style={{
                                     boxShadow:
                                         theme === "dark"
@@ -224,21 +237,23 @@ const ProjectsSection = () => {
                                             : "0 4px 20px -2px rgba(0, 0, 0, 0.1)",
                                 }}
                             >
-                                <motion.div
-                                    className="relative overflow-hidden h-52"
-                                    variants={imageVariants}
-                                >
-                                    <motion.img
-                                        src={project.image}
-                                        alt={project.title}
-                                        className="w-full h-full object-cover transition-all duration-300"
-                                        loading="lazy"
-                                        onError={(e) => {
-                                            e.target.onerror = null;
-                                            e.target.src =
-                                                "https://via.placeholder.com/400x200?text=Project+Image";
-                                        }}
-                                    />
+                                <div className="relative overflow-hidden h-52">
+                                    <motion.div 
+                                        variants={imageVariants}
+                                        className="w-full h-full"
+                                    >
+                                        <img
+                                            src={project.image}
+                                            alt={project.title}
+                                            className="w-full h-full object-cover transition-all duration-300"
+                                            loading="lazy"
+                                            onError={(e) => {
+                                                e.target.onerror = null;
+                                                e.target.src =
+                                                    "https://via.placeholder.com/400x200?text=Project+Image";
+                                            }}
+                                        />
+                                    </motion.div>
                                     <motion.div
                                         className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-80"
                                         initial={{ opacity: 0.7 }}
@@ -277,10 +292,10 @@ const ProjectsSection = () => {
                                             )}
                                         </div>
                                     </div>
-                                </motion.div>
+                                </div>
 
                                 <div className="p-6 flex flex-col flex-grow relative">
-                                    <p className="text-gray-700 dark:text-[#87A4B6] mb-6 flex-grow">
+                                    <p className="text-gray-700 dark:text-gray-300 mb-6 flex-grow">
                                         {project.description}
                                     </p>
 
@@ -327,7 +342,7 @@ const ProjectsSection = () => {
                                         >
                                             <FaExternalLinkAlt className="text-sm" />
                                             <span className="text-sm font-medium">
-                                                Live Demo
+                                                Code Demo
                                             </span>
                                         </motion.a>
                                     </div>
@@ -336,7 +351,6 @@ const ProjectsSection = () => {
                         ))}
                     </div>
 
-                    {/* Enhanced View More Button with animation */}
                     <motion.div
                         className="mt-16 text-center relative z-10"
                         variants={headerVariants}
@@ -371,8 +385,7 @@ const ProjectsSection = () => {
                 </div>
             </motion.section>
 
-            {/* Add CSS for particle animations */}
-            <style jsx>{`
+            <style>{`
                 .particle-container {
                     width: 100%;
                     height: 100%;
