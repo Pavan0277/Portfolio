@@ -6,6 +6,7 @@ import AboutSection from "./components/AboutSection";
 import ExperienceSection from "./components/ExperienceSection";
 import SkillsSection from "./components/SkillsSection";
 import ProjectsSection from "./components/ProjectsSection";
+import ContactSection from "./components/ContactSection";
 
 function AppContent() {
     const { theme, isAnimating } = useTheme();
@@ -24,8 +25,8 @@ function AppContent() {
                 <AboutSection />
                 <SkillsSection />
                 <ExperienceSection />
-                <ProjectsSection />
-                <div style={{ height: "100vh" }}></div>
+                {/* <ProjectsSection /> */}
+                <ContactSection />
             </div>
             
             {isAnimating && (
