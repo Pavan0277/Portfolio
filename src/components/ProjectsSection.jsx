@@ -226,7 +226,7 @@ const ProjectsSection = () => {
                         {projects.map((project, index) => (
                             <motion.article
                                 key={project.id}
-                                className="bg-white/60 dark:bg-gray-800/60 backdrop-blur-md rounded-xl border border-gray-200/70 dark:border-gray-700/70 overflow-hidden flex flex-col h-full group"
+                                className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden flex flex-col h-full group"
                                 variants={projectVariants}
                                 whileHover="hover"
                                 custom={index}
@@ -255,7 +255,7 @@ const ProjectsSection = () => {
                                         />
                                     </motion.div>
                                     <motion.div
-                                        className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/40 to-transparent opacity-80"
+                                        className="absolute inset-0 bg-gradient-to-t from-black/50 via-black/40 to-transparent opacity-80"
                                         initial={{ opacity: 0.7 }}
                                         whileHover={{ opacity: 0.5 }}
                                     />
@@ -356,7 +356,7 @@ const ProjectsSection = () => {
                         variants={headerVariants}
                     >
                         <motion.a
-                            href="https://github.com/yourusername"
+                            href="https://github.com/Pavan0228"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-500 dark:from-blue-700 dark:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-blue-500/20 dark:hover:shadow-blue-700/20 transition-all duration-300 font-medium"
