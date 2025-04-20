@@ -177,7 +177,7 @@ const HomeSection = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="px-5 py-2 sm:px-6 sm:py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-lg sm:rounded-xl text-sm sm:text-base font-medium tracking-wide hover:bg-blue-700 dark:hover:bg-blue-600 transition-all shadow-lg flex items-center justify-center"
-                            onClick={(e) => handleLinkClick(e, "#about")}
+                            onClick={(e) => handleLinkClick(e, "#projects")}
                         >
                             View My Work
                         </motion.div>
