@@ -7,18 +7,22 @@ import ExperienceSection from "./components/ExperienceSection";
 import SkillsSection from "./components/SkillsSection";
 import ProjectsSection from "./components/ProjectsSection";
 import ContactSection from "./components/ContactSection";
+import BackgroundPattern from "./components/BackgroundPattern";
 
 function AppContent() {
     const { theme, isAnimating } = useTheme();
 
     useEffect(() => {
-        document.body.className = theme === "dark" ? "grid-pattern-dark" : "grid-pattern-light";
-        
         document.body.classList.add("transition-colors", "duration-500");
-    }, [theme]);
+    }, []);
 
     return (
-        <div className={`app-container transition-colors duration-500 ${isAnimating ? 'overflow-hidden' : ''}`}>
+        <div
+            className={`app-container transition-colors duration-500 ${
+                isAnimating ? "overflow-hidden" : ""
+            }`}
+        >
+            <BackgroundPattern />
             <Navbar />
             <div className="main-content">
                 <HomeSection />
@@ -28,7 +32,7 @@ function AppContent() {
                 <ProjectsSection />
                 <ContactSection />
             </div>
-            
+
             {isAnimating && (
                 <div className="fixed inset-0 z-40 bg-white dark:bg-gray-900 bg-opacity-30 dark:bg-opacity-30 backdrop-blur-sm transition-all duration-300" />
             )}
