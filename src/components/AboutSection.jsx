@@ -1,6 +1,7 @@
 import React from "react";
 import { useTheme } from "./ThemeContext";
 import { motion } from "framer-motion";
+import { FaGraduationCap, FaCode, FaLightbulb, FaRocket } from "react-icons/fa";
 
 const AboutSection = () => {
     const { theme } = useTheme();
@@ -30,40 +31,19 @@ const AboutSection = () => {
         },
     };
 
-    const imageVariants = {
-        initial: { scale: 1 },
-        hover: {
-            scale: 1.05,
-            rotate: 3,
-            transition: {
-                type: "spring",
-                stiffness: 300,
-                damping: 15,
-            },
-        },
-        tap: {
-            scale: 0.98,
-            rotate: -2,
-            transition: {
-                type: "spring",
-                stiffness: 500,
-                damping: 10,
-            },
-        },
-    };
-
     const cardVariants = {
-        hidden: { opacity: 0, x: 100 },
+        hidden: { opacity: 0, scale: 0.8 },
         visible: {
             opacity: 1,
-            x: 0,
+            scale: 1,
             transition: {
                 type: "spring",
-                stiffness: 80,
+                stiffness: 100,
                 damping: 12,
             },
         },
         hover: {
+            scale: 1.05,
             y: -5,
             boxShadow:
                 "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
@@ -75,6 +55,54 @@ const AboutSection = () => {
         },
     };
 
+    const imageVariants = {
+        hidden: { opacity: 0, scale: 0.8 },
+        visible: {
+            opacity: 1,
+            scale: 1,
+            transition: {
+                type: "spring",
+                stiffness: 100,
+                damping: 12,
+            },
+        },
+        hover: {
+            scale: 1.05,
+            transition: {
+                type: "spring",
+                stiffness: 300,
+                damping: 15,
+            },
+        },
+    };
+
+    const highlights = [
+        {
+            icon: <FaGraduationCap />,
+            title: "Education",
+            description: "B.Tech in Computer Science & Engineering",
+            color: "blue",
+        },
+        {
+            icon: <FaCode />,
+            title: "Development",
+            description: "Full Stack Web Development with modern technologies",
+            color: "green",
+        },
+        {
+            icon: <FaLightbulb />,
+            title: "Innovation",
+            description: "Creative problem solving and innovative solutions",
+            color: "yellow",
+        },
+        {
+            icon: <FaRocket />,
+            title: "Growth",
+            description: "Continuously learning and adapting to new technologies",
+            color: "purple",
+        },
+    ];
+
     return (
         <div className="relative" id="about">
             <motion.section
@@ -84,209 +112,159 @@ const AboutSection = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 variants={containerVariants}
             >
+                {/* Background pattern */}
                 <motion.div
                     className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: theme === "dark" ? 0.1 : 0.05 }}
                     transition={{ duration: 0.5 }}
                 />
-
                 <div className="relative z-10 max-w-7xl mx-auto">
                     {/* Section Header */}
                     <motion.div
-                        className="text-center mb-12"
+                        className="text-center mb-16"
                         variants={itemVariants}
                     >
                         <motion.h2
                             className="text-2xl sm:text-3xl md:text-4xl font-bold mb-3 text-blue-600 dark:text-blue-400 inline-block relative"
                             variants={itemVariants}
                         >
-                            About
+                            About Me
                         </motion.h2>
                         <motion.h1
                             className="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 text-gray-900 dark:text-white bg-clip-text text-transparent bg-gradient-to-r from-gray-900 to-gray-700 dark:from-white dark:to-blue-100"
                             variants={itemVariants}
                         >
-                            Pavan Rasal
+                            Get to Know Me
                         </motion.h1>
                         <motion.div
                             className="w-24 h-1 bg-gradient-to-r from-blue-500 to-purple-500 dark:from-blue-400 dark:to-purple-400 rounded-full mx-auto mb-6"
                             variants={itemVariants}
                         />
                         <motion.p
-                            className="text-base sm:text-lg md:text-xl text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
+                            className="text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
                             variants={itemVariants}
                         >
-                            Full Stack Developer & Problem Solver
+                            Passionate developer with a love for creating innovative solutions
                         </motion.p>
                     </motion.div>
 
                     {/* Main Content */}
-                    <div className="flex flex-col md:flex-row items-center mx-4 sm:mx-6 md:mx-8 lg:mx-20 justify-between gap-4 md:gap-12">
-                        {/* Left side content with profile image */}
+                    <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center mb-16">
+                        {/* Profile Image */}
                         <motion.div
-                            className="relative z-10 w-full md:w-2/5 flex flex-col items-center md:items-start"
+                            className="flex justify-center lg:justify-start order-1 lg:order-1"
                             variants={itemVariants}
                         >
                             <motion.div
-                                className="logo w-64 h-auto mb-6"
-                                variants={itemVariants}
+                                className="relative"
+                                variants={imageVariants}
+                                whileHover="hover"
                             >
-                                <motion.div
-                                    className="relative overflow-hidden rounded-full border-4 border-blue-500/30 dark:border-blue-400/20 shadow-xl"
-                                    variants={imageVariants}
-                                    initial="initial"
-                                    whileHover="hover"
-                                    whileTap="tap"
-                                    animate={{
-                                        boxShadow: [
-                                            "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                                            "0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04)",
-                                            "0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05)",
-                                        ],
-                                        transition: {
-                                            repeat: Infinity,
-                                            repeatType: "reverse",
-                                            duration: 2,
-                                        },
-                                    }}
-                                >
-                                    <motion.div
-                                        className="absolute inset-0 bg-gradient-to-tr from-blue-500/10 to-purple-500/20"
-                                        animate={{
-                                            opacity: [0.1, 0.2, 0.1],
-                                            background: [
-                                                "linear-gradient(to top right, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.2))",
-                                                "linear-gradient(to bottom right, rgba(59, 130, 246, 0.2), rgba(168, 85, 247, 0.1))",
-                                                "linear-gradient(to top right, rgba(59, 130, 246, 0.1), rgba(168, 85, 247, 0.2))",
-                                            ],
-                                        }}
-                                        transition={{
-                                            duration: 3,
-                                            repeat: Infinity,
-                                            repeatType: "reverse",
-                                        }}
-                                    />
+                                <div className="relative w-80 h-80 sm:w-96 sm:h-96">
+                                    
+                                    {/* Profile image */}
                                     <motion.img
                                         src="/image.png"
-                                        alt="Pavan Rasal"
-                                        className="w-full h-auto object-cover filter drop-shadow-lg dark:drop-shadow-[0_0_20px_rgba(0,0,0,0.7)]"
-                                        whileHover={{ scale: 1.03 }}
+                                        alt="Pavan Rasal - Profile"
+                                        className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl z-10"
+                                        onError={(e) => {
+                                            e.target.onerror = null;
+                                            e.target.src = "https://via.placeholder.com/400x400?text=Profile+Photo";
+                                        }}
+                                        whileHover={{ scale: 1.02 }}
+                                        transition={{ type: "spring", stiffness: 300 }}
                                     />
-                                </motion.div>
+                                </div>
                             </motion.div>
                         </motion.div>
 
-                        {/* Right side content */}
+                        {/* About Content */}
                         <motion.div
-                            className="relative z-10 w-full md:w-3/5 flex flex-col items-center md:items-start"
+                            className="order-2 lg:order-2"
                             variants={itemVariants}
                         >
                             <motion.div
-                                className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-xl w-full"
+                                className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 shadow-xl"
                                 variants={cardVariants}
-                                whileHover="hover"
+                                whileHover={{ y: -5 }}
                             >
-                                <motion.p
-                                    className="text-base sm:text-lg mb-6 text-gray-700 dark:text-[#87A4B6] font-medium leading-relaxed"
-                                    variants={itemVariants}
-                                >
-                                    I'm a passionate developer who loves
-                                    building scalable and user-friendly
-                                    applications. From AI tools to finance
-                                    trackers, I enjoy turning ideas into
-                                    real-world solutions using tech like
-                                    Node.js, Docker, and ECS.
-                                </motion.p>
+                                <h3 className="text-xl sm:text-2xl font-bold text-gray-900 dark:text-white mb-4">
+                                    Hello! I'm Pavan Rasal
+                                </h3>
+                                <div className="space-y-4 text-gray-700 dark:text-gray-300">
+                                    <p className="text-base sm:text-lg leading-relaxed">
+                                        I'm a passionate <span className="font-semibold text-blue-600 dark:text-blue-400">Full Stack Developer</span> with 
+                                        a strong foundation in modern web technologies. I love creating innovative solutions 
+                                        that make a real impact.
+                                    </p>
+                                    <p className="text-base sm:text-lg leading-relaxed">
+                                        Currently pursuing my <span className="font-semibold text-green-600 dark:text-green-400">B.Tech in Computer Science</span>, 
+                                        I have hands-on experience with React.js, Node.js, and various cloud technologies. 
+                                        I've worked on projects ranging from finance trackers to deployment platforms.
+                                    </p>
+                                    <p className="text-base sm:text-lg leading-relaxed">
+                                        When I'm not coding, you'll find me exploring new technologies, contributing to 
+                                        open-source projects, or learning about the latest trends in web development. 
+                                        I believe in <span className="font-semibold text-purple-600 dark:text-purple-400">continuous learning</span> and 
+                                        always strive to write clean, efficient code.
+                                    </p>
+                                </div>
 
-                                <motion.p
-                                    className="text-base sm:text-lg text-gray-700 dark:text-[#87A4B6] font-medium leading-relaxed"
-                                    variants={itemVariants}
-                                >
-                                    I'm always eager to learn, grow, and
-                                    collaborate on projects that make an impact.
-                                    Exploring new tech and solving meaningful
-                                    problems is what drives me every day.
-                                </motion.p>
-
-                                {/* Education Section */}
-                                <motion.div
-                                    className="mt-8"
-                                    variants={itemVariants}
-                                >
-                                    <motion.h3
-                                        className="text-xl sm:text-2xl font-bold mb-4 text-blue-600 dark:text-blue-400"
-                                        variants={itemVariants}
-                                    >
-                                        Education
-                                    </motion.h3>
-
-                                    <motion.div className="space-y-4">
-                                        <motion.div
-                                            className="border-l-2 border-blue-500 dark:border-blue-400 pl-4 py-1"
-                                            variants={itemVariants}
-                                            whileHover={{ x: 5 }}
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 300,
-                                            }}
-                                        >
-                                            <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
-                                                Bachelor of Engineering in
-                                                Information Technology
-                                            </h4>
-                                            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                                                Vcet vasai
-                                            </p>
-                                            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
-                                                Present - 2022
-                                            </p>
-                                        </motion.div>
-
-                                        <motion.div
-                                            className="border-l-2 border-blue-500 dark:border-blue-400 pl-4 py-1"
-                                            variants={itemVariants}
-                                            whileHover={{ x: 5 }}
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 300,
-                                            }}
-                                        >
-                                            <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
-                                                Higher Secondary Education
-                                            </h4>
-                                            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                                                Vatak College
-                                            </p>
-                                            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
-                                                2020 - 2022
-                                            </p>
-                                        </motion.div>
-
-                                        <motion.div
-                                            className="border-l-2 border-blue-500 dark:border-blue-400 pl-4 py-1"
-                                            variants={itemVariants}
-                                            whileHover={{ x: 5 }}
-                                            transition={{
-                                                type: "spring",
-                                                stiffness: 300,
-                                            }}
-                                        >
-                                            <h4 className="text-base sm:text-lg font-semibold text-gray-800 dark:text-gray-200">
-                                                Secondary School Certificate
-                                            </h4>
-                                            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400">
-                                                A.V.S vidyaMandir
-                                            </p>
-                                            <p className="text-xs sm:text-sm text-gray-500 dark:text-gray-500">
-                                                2015 - 2019
-                                            </p>
-                                        </motion.div>
-                                    </motion.div>
-                                </motion.div>
+                                {/* Quick Stats */}
+                                <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-600">
+                                    <div className="grid grid-cols-2 gap-4">
+                                        <div className="text-center">
+                                            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">3+</div>
+                                            <div className="text-sm text-gray-600 dark:text-gray-400">Internships</div>
+                                        </div>
+                                        <div className="text-center">
+                                            <div className="text-2xl font-bold text-green-600 dark:text-green-400">10+</div>
+                                            <div className="text-sm text-gray-600 dark:text-gray-400">Projects</div>
+                                        </div>
+                                    </div>
+                                </div>
                             </motion.div>
                         </motion.div>
                     </div>
+
+                    {/* Highlights Grid */}
+                    <motion.div
+                        className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+                        variants={containerVariants}
+                    >
+                        {highlights.map((highlight, index) => (
+                            <motion.div
+                                key={highlight.title}
+                                className={`bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-xl text-center`}
+                                variants={cardVariants}
+                                whileHover="hover"
+                                custom={index}
+                            >
+                                <motion.div
+                                    className={`text-4xl mb-4 inline-flex items-center justify-center w-16 h-16 rounded-full ${
+                                        highlight.color === "blue"
+                                            ? "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
+                                            : highlight.color === "green"
+                                            ? "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"
+                                            : highlight.color === "yellow"
+                                            ? "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400"
+                                            : "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"
+                                    }`}
+                                    whileHover={{ rotate: 360 }}
+                                    transition={{ duration: 0.5 }}
+                                >
+                                    {highlight.icon}
+                                </motion.div>
+                                <h4 className="text-lg font-bold text-gray-900 dark:text-white mb-2">
+                                    {highlight.title}
+                                </h4>
+                                <p className="text-gray-700 dark:text-gray-300 text-sm">
+                                    {highlight.description}
+                                </p>
+                            </motion.div>
+                        ))}
+                    </motion.div>
                 </div>
             </motion.section>
         </div>
