@@ -12,9 +12,17 @@ const ProjectsSection = () => {
             title: "PennyTracker",
             description:
                 "An automatic finance tracker that allows users to track their spending by scraping messages, providing insights into their financial habits and helping them manage their budgets effectively.",
-            image: "pennytrackerImage.png", 
-            technologies: ["React.js", "Express", "MongoDB", "Chart.js", "AWS CloudFront", "Redux", "Redis"],
-            githubLink: "https://github.com/Pavan-0228/FinanceTracker",
+            image: "pennytrackerImage.png",
+            technologies: [
+                "React.js",
+                "Express",
+                "MongoDB",
+                "Chart.js",
+                "AWS CloudFront",
+                "Redux",
+                "Redis",
+            ],
+            githubLink: "https://github.com/Pavan0277/FinanceTracker",
             liveLink: "https://www.pennytracker.tech",
         },
         {
@@ -22,20 +30,33 @@ const ProjectsSection = () => {
             title: "BrowseAndBuy",
             description:
                 "A web application that allows seniors to list their previous year books and materials for juniors to purchase. It also features real-time chatting to facilitate communication between buyers and sellers.",
-            image: "bAndB.png", 
-            technologies: ["React.js", "Node.js", "MongoDB", "Socket.io", "Express"],
-            githubLink: "https://github.com/Pavan-0228/BrowseAndBuy",
+            image: "bAndB.png",
+            technologies: [
+                "React.js",
+                "Node.js",
+                "MongoDB",
+                "Socket.io",
+                "Express",
+            ],
+            githubLink: "https://github.com/Pavan0277/BrowseAndBuy",
             liveLink: "https://browsenbuy.vercel.app/",
         },
         {
             id: 3,
-            title: "BuildSphere",
+            title: "Snapdeploy",
             description:
-                "A platform that allows users to deploy and host their projects with ease. BuildSphere simplifies the deployment process for web applications and provides a seamless hosting experience.",
+                "A platform that allows users to deploy and host their projects with ease. Snapdeploy simplifies the deployment process for web applications and provides a seamless hosting experience.",
             image: "/buildSphere.png",
-            technologies: ["React.js", "Docker", "CI/CD", "AWS", "Node.js", "clickDb"],
-            githubLink: "https://github.com/Pavan-0228/BuildSphere",
-            liveLink: "https://github.com/Pavan-0228/BuildSphere",
+            technologies: [
+                "React.js",
+                "Docker",
+                "CI/CD",
+                "AWS",
+                "Node.js",
+                "clickDb",
+            ],
+            githubLink: "https://github.com/Pavan0277/snapdeploy",
+            liveLink: "https://snapdeploy.me",
         },
     ];
 
@@ -135,7 +156,7 @@ const ProjectsSection = () => {
             yMove: Math.random() * -100 - 50,
             xMove: Math.random() * 50 - 25,
             duration: Math.random() * 10 + 10,
-            delay: Math.random() * 5
+            delay: Math.random() * 5,
         }));
     }, []);
 
@@ -238,7 +259,7 @@ const ProjectsSection = () => {
                                 }}
                             >
                                 <div className="relative overflow-hidden h-52">
-                                    <motion.div 
+                                    <motion.div
                                         variants={imageVariants}
                                         className="w-full h-full"
                                     >
@@ -356,7 +377,7 @@ const ProjectsSection = () => {
                         variants={headerVariants}
                     >
                         <motion.a
-                            href="https://github.com/Pavan0228"
+                            href="https://github.com/Pavan0277"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="inline-flex items-center gap-2 px-8 py-3 bg-gradient-to-r from-blue-600 to-blue-500 dark:from-blue-700 dark:to-blue-600 text-white rounded-lg shadow-lg hover:shadow-blue-500/20 dark:hover:shadow-blue-700/20 transition-all duration-300 font-medium"
