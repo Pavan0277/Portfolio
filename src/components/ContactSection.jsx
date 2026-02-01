@@ -92,7 +92,7 @@ const ContactSection = () => {
                     templateParams,
                     {
                         publicKey: import.meta.env.VITE_APP_EMAILJS_PUBLIC_KEY,
-                    }
+                    },
                 );
 
                 console.log("Email successfully sent!", response);
@@ -105,15 +105,17 @@ const ContactSection = () => {
             } catch (error) {
                 // Improved error logging with full error details
                 console.error("Failed to send email:", error);
-                
+
                 // Log more details if available
-                if (error && typeof error === 'object') {
+                if (error && typeof error === "object") {
                     if (error.text) console.error("Error text:", error.text);
-                    if (error.message) console.error("Error message:", error.message);
-                    if (error.status) console.error("Error status:", error.status);
+                    if (error.message)
+                        console.error("Error message:", error.message);
+                    if (error.status)
+                        console.error("Error status:", error.status);
                     if (error.name) console.error("Error name:", error.name);
                 }
-                
+
                 setSubmitStatus("error");
             } finally {
                 setIsSubmitting(false);
@@ -130,12 +132,14 @@ const ContactSection = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 variants={containerVariants}
             >
-                <motion.div
-                    className="absolute inset-0 bg-grid-pattern opacity-3 dark:opacity-5"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: theme === "dark" ? 0.05 : 0.03 }}
-                    transition={{ duration: 0.5 }}
-                />
+                {/* Animated gradient orbs */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className="absolute top-20 left-1/4 w-72 h-72 bg-gradient-to-br from-blue-500/10 via-cyan-500/10 to-teal-500/10 dark:from-blue-400/5 dark:via-cyan-400/5 dark:to-teal-400/5 rounded-full blur-3xl animate-pulse"></div>
+                    <div
+                        className="absolute bottom-20 right-1/4 w-80 h-80 bg-gradient-to-tr from-purple-500/10 via-pink-500/10 to-red-500/10 dark:from-purple-400/5 dark:via-pink-400/5 dark:to-red-400/5 rounded-full blur-3xl animate-pulse"
+                        style={{ animationDelay: "2.5s" }}
+                    ></div>
+                </div>
 
                 <div className="relative z-10 max-w-6xl mx-auto">
                     <motion.div
@@ -170,7 +174,7 @@ const ContactSection = () => {
 
                     <div className="flex items-center justify-center mt-10">
                         <motion.div
-                            className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-lg shadow-xl p-8 sm:p-10 border border-gray-200 dark:border-gray-700 w-full max-w-2xl"
+                            className="bg-white/15 dark:bg-gray-900/25 backdrop-blur-md rounded-xl shadow-xl shadow-blue-500/5 dark:shadow-blue-400/5 p-8 sm:p-10 border border-white/20 dark:border-white/10 w-full max-w-2xl hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 transition-all duration-300"
                             variants={itemVariants}
                         >
                             <h3 className="text-xl font-bold text-gray-800 dark:text-white mb-6">
@@ -220,11 +224,11 @@ const ContactSection = () => {
                                             value={formData.name}
                                             onChange={handleChange}
                                             autoComplete="name"
-                                            className={`w-full px-4 py-3 rounded-md bg-white/50 dark:bg-gray-700/50 border ${
+                                            className={`w-full px-4 py-3 rounded-lg bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm border ${
                                                 formErrors.name
-                                                    ? "border-red-500 dark:border-red-400"
-                                                    : "border-gray-300 dark:border-gray-600"
-                                            } focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none transition-colors`}
+                                                    ? "border-red-500/50 dark:border-red-400/50"
+                                                    : "border-white/20 dark:border-white/10"
+                                            } focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-blue-400/50 focus:border-blue-500/50 dark:focus:border-blue-400/50 focus:outline-none transition-all duration-300 placeholder-gray-500 dark:placeholder-gray-400`}
                                             placeholder="Enter your name"
                                         />
                                         {formErrors.name && (
@@ -247,11 +251,11 @@ const ContactSection = () => {
                                             value={formData.email}
                                             onChange={handleChange}
                                             autoComplete="email"
-                                            className={`w-full px-4 py-3 rounded-md bg-white/70 dark:bg-gray-700/70 border ${
+                                            className={`w-full px-4 py-3 rounded-lg bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm border ${
                                                 formErrors.email
-                                                    ? "border-red-500 dark:border-red-400"
-                                                    : "border-gray-300 dark:border-gray-600"
-                                            } focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none transition-colors`}
+                                                    ? "border-red-500/50 dark:border-red-400/50"
+                                                    : "border-white/20 dark:border-white/10"
+                                            } focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-blue-400/50 focus:border-blue-500/50 dark:focus:border-blue-400/50 focus:outline-none transition-all duration-300 placeholder-gray-500 dark:placeholder-gray-400`}
                                             placeholder="Enter your email"
                                         />
                                         {formErrors.email && (
@@ -276,7 +280,7 @@ const ContactSection = () => {
                                         value={formData.subject}
                                         onChange={handleChange}
                                         autoComplete="off"
-                                        className="w-full px-4 py-3 rounded-md bg-white/70 dark:bg-gray-700/70 border border-gray-300 dark:border-gray-600 focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none transition-colors"
+                                        className="w-full px-4 py-3 rounded-lg bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm border border-white/20 dark:border-white/10 focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-blue-400/50 focus:border-blue-500/50 dark:focus:border-blue-400/50 focus:outline-none transition-all duration-300 placeholder-gray-500 dark:placeholder-gray-400"
                                         placeholder="Specify the purpose of your message"
                                     />
                                 </div>
@@ -295,11 +299,11 @@ const ContactSection = () => {
                                         onChange={handleChange}
                                         autoComplete="off"
                                         rows="6"
-                                        className={`w-full px-4 py-3 rounded-md bg-white/70 dark:bg-gray-700/70 border ${
+                                        className={`w-full px-4 py-3 rounded-lg bg-white/10 dark:bg-gray-800/30 backdrop-blur-sm border ${
                                             formErrors.message
-                                                ? "border-red-500 dark:border-red-400"
-                                                : "border-gray-300 dark:border-gray-600"
-                                        } focus:ring-2 focus:ring-blue-500 dark:focus:ring-blue-400 focus:outline-none transition-colors`}
+                                                ? "border-red-500/50 dark:border-red-400/50"
+                                                : "border-white/20 dark:border-white/10"
+                                        } focus:ring-2 focus:ring-blue-500/50 dark:focus:ring-blue-400/50 focus:border-blue-500/50 dark:focus:border-blue-400/50 focus:outline-none transition-all duration-300 placeholder-gray-500 dark:placeholder-gray-400`}
                                         placeholder="Please describe your project or inquiry in detail"
                                     />
                                     {formErrors.message && (

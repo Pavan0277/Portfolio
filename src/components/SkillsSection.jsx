@@ -91,12 +91,14 @@ const SkillsSection = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 variants={containerVariants}
             >
-                <motion.div
-                    className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: theme === "dark" ? 0.1 : 0.05 }}
-                    transition={{ duration: 0.5 }}
-                />
+                {/* Animated gradient orbs */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className="absolute top-1/4 left-1/4 w-72 h-72 bg-gradient-to-br from-cyan-500/10 via-blue-500/10 to-purple-500/10 dark:from-cyan-400/5 dark:via-blue-400/5 dark:to-purple-400/5 rounded-full blur-3xl animate-pulse"></div>
+                    <div
+                        className="absolute bottom-1/4 right-1/4 w-64 h-64 bg-gradient-to-tr from-purple-500/10 via-pink-500/10 to-orange-500/10 dark:from-purple-400/5 dark:via-pink-400/5 dark:to-orange-400/5 rounded-full blur-3xl animate-pulse"
+                        style={{ animationDelay: "1.5s" }}
+                    ></div>
+                </div>
 
                 <div className="relative z-10 max-w-7xl mx-auto">
                     <motion.div
@@ -134,7 +136,7 @@ const SkillsSection = () => {
                         {skills.map((skill, index) => (
                             <motion.div
                                 key={skill.name}
-                                className={`bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-5 rounded-xl border border-gray-200 dark:border-gray-700 flex flex-col items-center justify-center shadow-md`}
+                                className={`bg-white/15 dark:bg-gray-900/25 backdrop-blur-md p-5 rounded-xl border border-white/20 dark:border-white/10 flex flex-col items-center justify-center shadow-lg shadow-blue-500/5 dark:shadow-blue-400/5 hover:shadow-xl hover:shadow-blue-500/15 dark:hover:shadow-blue-400/15 hover:border-white/30 dark:hover:border-white/20 transition-all duration-300 group`}
                                 variants={cardVariants}
                                 whileHover="hover"
                                 custom={index}

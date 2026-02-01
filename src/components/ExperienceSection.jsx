@@ -110,12 +110,14 @@ const ExperienceSection = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 variants={containerVariants}
             >
-                <motion.div
-                    className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: theme === "dark" ? 0.1 : 0.05 }}
-                    transition={{ duration: 0.5 }}
-                />
+                {/* Animated gradient orbs */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className="absolute top-1/3 right-10 w-96 h-96 bg-gradient-to-br from-blue-500/10 via-indigo-500/10 to-purple-500/10 dark:from-blue-400/5 dark:via-indigo-400/5 dark:to-purple-400/5 rounded-full blur-3xl animate-pulse"></div>
+                    <div
+                        className="absolute bottom-1/3 left-10 w-80 h-80 bg-gradient-to-tr from-green-500/10 via-teal-500/10 to-blue-500/10 dark:from-green-400/5 dark:via-teal-400/5 dark:to-blue-400/5 rounded-full blur-3xl animate-pulse"
+                        style={{ animationDelay: "1s" }}
+                    ></div>
+                </div>
 
                 <motion.div
                     className="relative z-10 w-full flex flex-col items-center text-center mb-10"
@@ -151,7 +153,7 @@ const ExperienceSection = () => {
                     className="relative z-10 w-full flex flex-col"
                     variants={containerVariants}
                 >
-                    <div className="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] top-0 bottom-0 w-1 bg-gray-300 dark:bg-gray-700 ml-6 md:ml-0"></div>
+                    <div className="absolute left-0 md:left-1/2 transform md:translate-x-[-50%] top-0 bottom-0 w-1 bg-gradient-to-b from-blue-500/50 via-purple-500/50 to-pink-500/50 dark:from-blue-400/30 dark:via-purple-400/30 dark:to-pink-400/30 ml-6 md:ml-0 shadow-[0_0_10px_rgba(59,130,246,0.3)] dark:shadow-[0_0_10px_rgba(59,130,246,0.2)]"></div>
 
                     {experiences.map((exp, index) => (
                         <motion.div
@@ -184,7 +186,7 @@ const ExperienceSection = () => {
                                 }`}
                             >
                                 <motion.div
-                                    className={`bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm p-6 sm:p-8 rounded-xl border border-gray-200 dark:border-gray-700 shadow-xl w-full`}
+                                    className={`bg-white/15 dark:bg-gray-900/25 backdrop-blur-md p-6 sm:p-8 rounded-xl border border-white/20 dark:border-white/10 shadow-xl shadow-blue-500/5 dark:shadow-blue-400/5 hover:shadow-2xl hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 hover:border-white/30 dark:hover:border-white/20 w-full transition-all duration-300`}
                                     variants={{
                                         ...cardVariants,
                                         hidden: {
@@ -246,7 +248,7 @@ const ExperienceSection = () => {
                                                             <span className="inline-block w-1.5 h-1.5 rounded-full bg-blue-500 dark:bg-blue-400 mt-2"></span>
                                                             <span>{item}</span>
                                                         </motion.li>
-                                                    )
+                                                    ),
                                                 )}
                                             </ul>
                                         </div>

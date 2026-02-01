@@ -98,7 +98,8 @@ const AboutSection = () => {
         {
             icon: <FaRocket />,
             title: "Growth",
-            description: "Continuously learning and adapting to new technologies",
+            description:
+                "Continuously learning and adapting to new technologies",
             color: "purple",
         },
     ];
@@ -112,13 +113,14 @@ const AboutSection = () => {
                 viewport={{ once: true, amount: 0.2 }}
                 variants={containerVariants}
             >
-                {/* Background pattern */}
-                <motion.div
-                    className="absolute inset-0 bg-grid-pattern opacity-5 dark:opacity-10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: theme === "dark" ? 0.1 : 0.05 }}
-                    transition={{ duration: 0.5 }}
-                />
+                {/* Animated gradient orbs */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className="absolute top-20 right-10 w-64 h-64 bg-gradient-to-br from-green-500/10 via-blue-500/10 to-purple-500/10 dark:from-green-400/5 dark:via-blue-400/5 dark:to-purple-400/5 rounded-full blur-3xl animate-pulse"></div>
+                    <div
+                        className="absolute bottom-20 left-10 w-80 h-80 bg-gradient-to-tr from-purple-500/10 via-pink-500/10 to-blue-500/10 dark:from-purple-400/5 dark:via-pink-400/5 dark:to-blue-400/5 rounded-full blur-3xl animate-pulse"
+                        style={{ animationDelay: "2s" }}
+                    ></div>
+                </div>
                 <div className="relative z-10 max-w-7xl mx-auto">
                     {/* Section Header */}
                     <motion.div
@@ -145,7 +147,8 @@ const AboutSection = () => {
                             className="text-base sm:text-lg text-gray-700 dark:text-gray-300 max-w-2xl mx-auto"
                             variants={itemVariants}
                         >
-                            Passionate developer with a love for creating innovative solutions
+                            Passionate developer with a love for creating
+                            innovative solutions
                         </motion.p>
                     </motion.div>
 
@@ -162,7 +165,6 @@ const AboutSection = () => {
                                 whileHover="hover"
                             >
                                 <div className="relative w-80 h-80 sm:w-96 sm:h-96">
-                                    
                                     {/* Profile image */}
                                     <motion.img
                                         src="/image.png"
@@ -170,10 +172,14 @@ const AboutSection = () => {
                                         className="relative w-full h-full object-cover rounded-full border-4 border-white dark:border-gray-800 shadow-2xl z-10"
                                         onError={(e) => {
                                             e.target.onerror = null;
-                                            e.target.src = "https://via.placeholder.com/400x400?text=Profile+Photo";
+                                            e.target.src =
+                                                "https://via.placeholder.com/400x400?text=Profile+Photo";
                                         }}
                                         whileHover={{ scale: 1.02 }}
-                                        transition={{ type: "spring", stiffness: 300 }}
+                                        transition={{
+                                            type: "spring",
+                                            stiffness: 300,
+                                        }}
                                     />
                                 </div>
                             </motion.div>
@@ -185,7 +191,7 @@ const AboutSection = () => {
                             variants={itemVariants}
                         >
                             <motion.div
-                                className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 sm:p-8 border border-gray-200 dark:border-gray-700 shadow-xl"
+                                className="bg-white/20 dark:bg-gray-900/30 backdrop-blur-md rounded-xl p-6 sm:p-8 border border-white/20 dark:border-white/10 shadow-xl shadow-blue-500/5 dark:shadow-blue-400/5 hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 transition-shadow duration-300"
                                 variants={cardVariants}
                                 whileHover={{ y: -5 }}
                             >
@@ -194,20 +200,36 @@ const AboutSection = () => {
                                 </h3>
                                 <div className="space-y-4 text-gray-700 dark:text-gray-300">
                                     <p className="text-base sm:text-lg leading-relaxed">
-                                        I'm a passionate <span className="font-semibold text-blue-600 dark:text-blue-400">Full Stack Developer</span> with 
-                                        a strong foundation in modern web technologies. I love creating innovative solutions 
-                                        that make a real impact.
+                                        I'm a passionate{" "}
+                                        <span className="font-semibold text-blue-600 dark:text-blue-400">
+                                            Full Stack Developer
+                                        </span>{" "}
+                                        with a strong foundation in modern web
+                                        technologies. I love creating innovative
+                                        solutions that make a real impact.
                                     </p>
                                     <p className="text-base sm:text-lg leading-relaxed">
-                                        Currently pursuing my <span className="font-semibold text-green-600 dark:text-green-400">B.Tech in Computer Science</span>, 
-                                        I have hands-on experience with React.js, Node.js, and various cloud technologies. 
-                                        I've worked on projects ranging from finance trackers to deployment platforms.
+                                        Currently pursuing my{" "}
+                                        <span className="font-semibold text-green-600 dark:text-green-400">
+                                            B.Tech in Computer Science
+                                        </span>
+                                        , I have hands-on experience with
+                                        React.js, Node.js, and various cloud
+                                        technologies. I've worked on projects
+                                        ranging from finance trackers to
+                                        deployment platforms.
                                     </p>
                                     <p className="text-base sm:text-lg leading-relaxed">
-                                        When I'm not coding, you'll find me exploring new technologies, contributing to 
-                                        open-source projects, or learning about the latest trends in web development. 
-                                        I believe in <span className="font-semibold text-purple-600 dark:text-purple-400">continuous learning</span> and 
-                                        always strive to write clean, efficient code.
+                                        When I'm not coding, you'll find me
+                                        exploring new technologies, contributing
+                                        to open-source projects, or learning
+                                        about the latest trends in web
+                                        development. I believe in{" "}
+                                        <span className="font-semibold text-purple-600 dark:text-purple-400">
+                                            continuous learning
+                                        </span>{" "}
+                                        and always strive to write clean,
+                                        efficient code.
                                     </p>
                                 </div>
 
@@ -215,12 +237,20 @@ const AboutSection = () => {
                                 <div className="mt-6 pt-6 border-t border-gray-200 dark:border-gray-600">
                                     <div className="grid grid-cols-2 gap-4">
                                         <div className="text-center">
-                                            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">3+</div>
-                                            <div className="text-sm text-gray-600 dark:text-gray-400">Internships</div>
+                                            <div className="text-2xl font-bold text-blue-600 dark:text-blue-400">
+                                                3+
+                                            </div>
+                                            <div className="text-sm text-gray-600 dark:text-gray-400">
+                                                Internships
+                                            </div>
                                         </div>
                                         <div className="text-center">
-                                            <div className="text-2xl font-bold text-green-600 dark:text-green-400">10+</div>
-                                            <div className="text-sm text-gray-600 dark:text-gray-400">Projects</div>
+                                            <div className="text-2xl font-bold text-green-600 dark:text-green-400">
+                                                10+
+                                            </div>
+                                            <div className="text-sm text-gray-600 dark:text-gray-400">
+                                                Projects
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -236,7 +266,7 @@ const AboutSection = () => {
                         {highlights.map((highlight, index) => (
                             <motion.div
                                 key={highlight.title}
-                                className={`bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-200 dark:border-gray-700 shadow-xl text-center`}
+                                className={`bg-white/15 dark:bg-gray-900/25 backdrop-blur-md rounded-xl p-6 border border-white/20 dark:border-white/10 shadow-lg shadow-blue-500/5 dark:shadow-blue-400/5 hover:shadow-xl hover:shadow-blue-500/10 dark:hover:shadow-blue-400/10 text-center transition-all duration-300`}
                                 variants={cardVariants}
                                 whileHover="hover"
                                 custom={index}
@@ -246,10 +276,10 @@ const AboutSection = () => {
                                         highlight.color === "blue"
                                             ? "bg-blue-100 dark:bg-blue-900/30 text-blue-600 dark:text-blue-400"
                                             : highlight.color === "green"
-                                            ? "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"
-                                            : highlight.color === "yellow"
-                                            ? "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400"
-                                            : "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"
+                                              ? "bg-green-100 dark:bg-green-900/30 text-green-600 dark:text-green-400"
+                                              : highlight.color === "yellow"
+                                                ? "bg-yellow-100 dark:bg-yellow-900/30 text-yellow-600 dark:text-yellow-400"
+                                                : "bg-purple-100 dark:bg-purple-900/30 text-purple-600 dark:text-purple-400"
                                     }`}
                                     whileHover={{ rotate: 360 }}
                                     transition={{ duration: 0.5 }}
