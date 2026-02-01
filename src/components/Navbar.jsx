@@ -14,9 +14,9 @@ const Navbar = () => {
                 ? mainContent.scrollTop
                 : window.scrollY;
             setIsScrolled(scrollPosition > 50);
-            
+
             // Detect which section is currently in view
-            const sections = navLinks.map(link => link.href.substring(1));
+            const sections = navLinks.map((link) => link.href.substring(1));
             for (const section of sections.reverse()) {
                 const element = document.getElementById(section);
                 if (element) {
@@ -58,46 +58,48 @@ const Navbar = () => {
     const handleLinkClick = (e, href) => {
         e.preventDefault();
         setIsOpen(false); // Close the mobile menu
-        
+
         const targetId = href.substring(1);
         const targetSection = document.getElementById(targetId);
-        
+
         if (targetSection) {
             // Create a smooth animation to the target section
             const offset = targetSection.offsetTop - 80; // Adjust offset to account for navbar height
-            
-            const mainContent = document.querySelector(".main-content") || window;
+
+            const mainContent =
+                document.querySelector(".main-content") || window;
             const currentScroll = mainContent.scrollTop || window.scrollY;
             const distance = offset - currentScroll;
-            
+
             // Animate scroll with easing
             const duration = 1000; // ms
             const start = performance.now();
-            
+
             function animateScroll(timestamp) {
                 const elapsed = timestamp - start;
                 const progress = Math.min(elapsed / duration, 1);
-                
+
                 // Easing function (easeInOutCubic)
-                const easeInOutCubic = progress < 0.5
-                    ? 4 * progress * progress * progress
-                    : 1 - Math.pow(-2 * progress + 2, 3) / 2;
-                
-                const newPosition = currentScroll + (distance * easeInOutCubic);
-                
+                const easeInOutCubic =
+                    progress < 0.5
+                        ? 4 * progress * progress * progress
+                        : 1 - Math.pow(-2 * progress + 2, 3) / 2;
+
+                const newPosition = currentScroll + distance * easeInOutCubic;
+
                 if (mainContent === window) {
                     window.scrollTo(0, newPosition);
                 } else {
                     mainContent.scrollTop = newPosition;
                 }
-                
+
                 if (progress < 1) {
                     requestAnimationFrame(animateScroll);
                 } else {
                     setActiveSection(targetId);
                 }
             }
-            
+
             requestAnimationFrame(animateScroll);
         }
     };
@@ -111,7 +113,7 @@ const Navbar = () => {
             transition={{ duration: 0.5 }}
             className={`fixed w-full z-50 transition-all duration-300 ${
                 isScrolled
-                    ? "bg-white/40 dark:bg-gray-900/40 backdrop-blur-md shadow-lg"
+                    ? "bg-white/20 dark:bg-gray-900/30 backdrop-blur-xl shadow-lg shadow-blue-500/5 dark:shadow-blue-400/5 border-b border-white/10 dark:border-white/5"
                     : "bg-transparent"
             }`}
         >
@@ -192,7 +194,7 @@ const Navbar = () => {
                     initial={{ opacity: 0, height: 0 }}
                     animate={{ opacity: 1, height: "auto" }}
                     exit={{ opacity: 0, height: 0 }}
-                    className="md:hidden bg-white dark:bg-gray-900 shadow-lg"
+                    className="md:hidden bg-white/20 dark:bg-gray-900/30 backdrop-blur-xl shadow-lg shadow-blue-500/5 dark:shadow-blue-400/5 border-b border-white/10 dark:border-white/5"
                 >
                     <div className="px-4 py-3 space-y-3">
                         {navLinks.map((link) => (

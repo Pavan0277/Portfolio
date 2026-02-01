@@ -64,10 +64,13 @@ const HomeSection = () => {
             id="home"
             className="relative min-h-screen flex flex-col items-center justify-center py-10 px-4 sm:px-6 lg:px-8 xl:px-10"
         >
-            {/* Background elements for visual interest */}
             <div className="absolute top-0 left-0 w-full h-full overflow-hidden pointer-events-none">
-                <div className="absolute -top-24 -right-24 w-72 h-72 sm:w-96 sm:h-96 bg-blue-500/10 dark:bg-blue-400/5 rounded-full blur-3xl"></div>
-                <div className="absolute bottom-12 -left-24 w-64 h-64 sm:w-80 sm:h-80 bg-purple-500/10 dark:bg-purple-400/5 rounded-full blur-3xl"></div>
+                <div className="absolute -top-24 -right-24 w-72 h-72 sm:w-96 sm:h-96 bg-gradient-to-br from-blue-500/20 via-purple-500/15 to-cyan-500/10 dark:from-blue-400/10 dark:via-purple-400/8 dark:to-cyan-400/5 rounded-full blur-3xl animate-pulse"></div>
+                <div
+                    className="absolute bottom-12 -left-24 w-64 h-64 sm:w-80 sm:h-80 bg-gradient-to-tr from-purple-500/20 via-pink-500/15 to-blue-500/10 dark:from-purple-400/10 dark:via-pink-400/8 dark:to-blue-400/5 rounded-full blur-3xl animate-pulse"
+                    style={{ animationDelay: "1s" }}
+                ></div>
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-96 h-96 bg-gradient-radial from-blue-500/5 to-transparent dark:from-blue-400/3 rounded-full blur-2xl"></div>
             </div>
 
             <div className="container max-w-6xl mx-auto text-center relative z-10">
@@ -75,7 +78,7 @@ const HomeSection = () => {
                     initial={{ opacity: 0, y: 50 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
-                    className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8"
+                    className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12"
                 >
                     <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-4 text-gray-900 dark:text-white leading-tight">
                         Hello, I'm{" "}
@@ -176,7 +179,7 @@ const HomeSection = () => {
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-5 py-2 sm:px-6 sm:py-3 bg-blue-600 dark:bg-blue-500 text-white rounded-lg sm:rounded-xl text-sm sm:text-base font-medium tracking-wide hover:bg-blue-700 dark:hover:bg-blue-600 transition-all shadow-lg flex items-center justify-center"
+                            className="px-5 py-2 sm:px-6 sm:py-3 bg-gradient-to-r from-blue-600 to-purple-600 dark:from-blue-500 dark:to-purple-500 text-white rounded-lg sm:rounded-xl text-sm sm:text-base font-medium tracking-wide hover:from-blue-700 hover:to-purple-700 dark:hover:from-blue-600 dark:hover:to-purple-600 transition-all shadow-lg shadow-blue-500/25 dark:shadow-blue-400/20 flex items-center justify-center cursor-pointer"
                             onClick={(e) => handleLinkClick(e, "#projects")}
                         >
                             View My Work
@@ -185,7 +188,7 @@ const HomeSection = () => {
                         <motion.div
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
-                            className="px-5 py-2 sm:px-6 sm:py-3 border-2 border-gray-800 dark:border-white text-gray-800 dark:text-white rounded-lg sm:rounded-xl text-sm sm:text-base font-medium tracking-wide hover:bg-gray-100 dark:hover:bg-gray-800/30 transition-all shadow-lg flex items-center justify-center"
+                            className="px-5 py-2 sm:px-6 sm:py-3 border border-blue-500/50 dark:border-blue-400/50 text-gray-800 dark:text-white rounded-lg sm:rounded-xl text-sm sm:text-base font-medium tracking-wide bg-transparent hover:bg-white/10 dark:hover:bg-white/5 hover:border-blue-500 dark:hover:border-blue-400 transition-all flex items-center justify-center cursor-pointer"
                             onClick={(e) => handleLinkClick(e, "#contact")}
                         >
                             Contact Me

@@ -169,13 +169,14 @@ const ProjectsSection = () => {
                 viewport={{ once: true, amount: 0.1 }}
                 variants={containerVariants}
             >
-                {/* Background pattern with animated particles */}
-                <motion.div
-                    className="absolute inset-0 opacity-5 dark:opacity-10"
-                    initial={{ opacity: 0 }}
-                    animate={{ opacity: theme === "dark" ? 0.1 : 0.05 }}
-                    transition={{ duration: 0.5, ease: "easeInOut" }}
-                />
+                {/* Animated gradient orbs */}
+                <div className="absolute inset-0 pointer-events-none overflow-hidden">
+                    <div className="absolute top-10 right-20 w-80 h-80 bg-gradient-to-br from-blue-500/10 via-purple-500/10 to-pink-500/10 dark:from-blue-400/5 dark:via-purple-400/5 dark:to-pink-400/5 rounded-full blur-3xl animate-pulse"></div>
+                    <div
+                        className="absolute bottom-10 left-20 w-72 h-72 bg-gradient-to-tr from-green-500/10 via-cyan-500/10 to-blue-500/10 dark:from-green-400/5 dark:via-cyan-400/5 dark:to-blue-400/5 rounded-full blur-3xl animate-pulse"
+                        style={{ animationDelay: "2s" }}
+                    ></div>
+                </div>
 
                 {/* Floating particles background effect */}
                 <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -247,15 +248,15 @@ const ProjectsSection = () => {
                         {projects.map((project, index) => (
                             <motion.article
                                 key={project.id}
-                                className="bg-white/50 dark:bg-gray-800/50 backdrop-blur-sm rounded-xl border border-gray-200/50 dark:border-gray-700/50 overflow-hidden flex flex-col h-full group"
+                                className="bg-white/15 dark:bg-gray-900/25 backdrop-blur-md rounded-xl border border-white/20 dark:border-white/10 overflow-hidden flex flex-col h-full group hover:border-white/30 dark:hover:border-white/20 transition-all duration-300"
                                 variants={projectVariants}
                                 whileHover="hover"
                                 custom={index}
                                 style={{
                                     boxShadow:
                                         theme === "dark"
-                                            ? "0 4px 20px -2px rgba(0, 0, 0, 0.3)"
-                                            : "0 4px 20px -2px rgba(0, 0, 0, 0.1)",
+                                            ? "0 4px 30px -2px rgba(59, 130, 246, 0.1), 0 0 20px rgba(139, 92, 246, 0.05)"
+                                            : "0 4px 30px -2px rgba(59, 130, 246, 0.15), 0 0 20px rgba(139, 92, 246, 0.08)",
                                 }}
                             >
                                 <div className="relative overflow-hidden h-52">
@@ -332,7 +333,7 @@ const ProjectsSection = () => {
                                                 >
                                                     {tech}
                                                 </motion.span>
-                                            )
+                                            ),
                                         )}
                                     </div>
 
